@@ -71,10 +71,22 @@ var fight = function(enemy) {
     }
   };
 
-// initialize player Robot 
+// function to input player Robot name - will not accept null value 
+ var getPlayerName = function() {
+   var name = "";
+
+   while (name === "" || name === null){
+     name = prompt("What is your robot's name?");
+   }
+
+   console.log("Your robot's name is " + name);
+   return name; 
+ }
+
+  // initialize player Robot 
 
 var playerInfo = {
-  name: window.promt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
